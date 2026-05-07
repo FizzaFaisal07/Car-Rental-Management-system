@@ -90,7 +90,7 @@
             color: #000;
         }
 
-        /* FIX: Light mode hero background - CLEAR AND VISIBLE */
+    
 body.light-mode .hero {
     background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.55)),
                 url('img/h1.jpg');
@@ -239,18 +239,93 @@ body.light-mode .hero .hero-image img {
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 80px;
-            background: linear-gradient(rgba(18, 18, 18, 0.85), rgba(18, 18, 18, 0.8)),
-                        url('img/h1.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
+/* Hero section - Dark mode (default) */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    background: linear-gradient(rgba(18, 18, 18, 0.85), rgba(18, 18, 18, 0.8)),
+                url('img/h1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Hero Image - Fix for mobile */
+.hero-image {
+    flex: 1;
+    text-align: center;
+    width: 100%;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    max-height: 380px;
+    object-fit: cover;
+    border-radius: 20px;
+    animation: float 4s ease-in-out infinite;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* Tablet (768px to 968px) */
+@media (max-width: 968px) {
+    .hero-image img { 
+        max-width: 400px; 
+        max-height: 320px; 
+    }
+}
+
+/* Mobile Large (576px to 767px) */
+@media (max-width: 767px) {
+    .hero-image {
+        width: 100%;
+        padding: 0 20px;
+    }
+    
+    .hero-image img { 
+        max-width: 90%;
+        width: 90%;
+        max-height: 300px;
+        min-width: 260px;
+    }
+}
+
+/* Mobile Medium (480px to 575px) */
+@media (max-width: 575px) {
+    .hero-image img { 
+        max-width: 85%;
+        width: 85%;
+        max-height: 280px;
+        min-width: 240px;
+    }
+}
+
+/* Mobile Small (below 480px) */
+@media (max-width: 480px) {
+    .hero-image {
+        padding: 0 15px;
+    }
+    
+    .hero-image img { 
+        max-width: 95%;
+        width: 95%;
+        max-height: 260px;
+        min-width: 220px;
+    }
+}
+
+/* Very Small Devices (below 380px) */
+@media (max-width: 380px) {
+    .hero-image img { 
+        max-width: 100%;
+        width: 100%;
+        max-height: 240px;
+        min-width: 200px;
+    }
+}
 
         .hero-content {
             display: flex;
