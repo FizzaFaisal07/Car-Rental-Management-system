@@ -3,286 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CarXRent | Car Rental </title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <title>CarXRent | Premium Car Rental</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
 </head>
-<body class="light-mode">
-    
-      <!-- LOGIN / SIGNUP MODAL -->
+<body>
+
+<!-- Modal -->
 <div id="authModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeLoginModal()">&times;</span>
-
-    <div class="tabs">
-      <button onclick="showAuthForm('login')" id="loginTab" class="active-tab">Login</button>
-      <button onclick="showAuthForm('signup')" id="signupTab">Sign Up</button>
-    </div>
-
-    <!-- Login Form -->
-    <form id="loginForm" class="auth-form">
-      <input type="email" id="loginEmail" placeholder="Email" required />
-      <input type="password" id="loginPassword" placeholder="Password" required />
-      <button type="submit">Login</button>
-    </form>
-
-    <!-- Signup Form -->
-    <form id="signupForm" class="auth-form" style="display: none;">
-      <input type="text" placeholder="Full Name" required />
-      <input type="email" placeholder="Email" required />
-      <input type="password" placeholder="Password" required />
-      <input type="password" placeholder="Confirm Password" required />
-      <button type="submit">Sign Up</button>
-    </form>
-  </div>
-</div>
-
-
-
-    <!--Header-->
-    <header>
-        <div class="container">
-            <nav>
-              <div class="menu-toggle">&#9776;</div>
-                <div class="logo">
-                    <i class="fas fa-car-side"></i>
-                    Car<span>XRent</span>
-                </div>
-                <ul class="nav-links">
-                    <li ><a href="#home">Home</a></li>
-                    <li><a href="#cars">Available Cars</a></li>
-                    <li><a href="#booking">Booking</a></li>
-                    <li><a href="#contact">Contact us</a></li>
-                </ul>
-                <div class="right">
-                    <button class="login-btn"  onclick="openLoginModal()">Login</button>
-                    <button id="mode-toggle" class="mode-btn">☀️Mode</button>
-                </div>
-            </nav>
+    <div class="modal-content">
+        <span class="close" onclick="closeLoginModal()">&times;</span>
+        <div class="tabs">
+            <button onclick="showAuthForm('login')" id="loginTab" class="active-tab">Login</button>
+            <button onclick="showAuthForm('signup')" id="signupTab">Sign Up</button>
         </div>
-    </header>
-
-  
-
-     <!--Home Page-->
-
-     <section class="hero" id="home">
-        <div class="container">
-    <div class="hero-content">
-        <div class="hero-text">
-            <h1>Welcome to <span>CarXrent!</span></h1>
-            <h2>Find Your Ride Today!</h2>
-            <p>Your trusted destination for renting affordable, premium cars anywhere, anytime.<br>
-                Rent Affordable Cars in Seconds.
-            </p>
-                <div class="hero-buttons">
-                    <a href="#cars" class="btn">Explore Cars</a>
-                   <a href="#booking" class="btn btn-outline">Book Now</a>
-                </div>
-        </div>
-        <div class="hero-image">
-            <img src="https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?cs=srgb&dl=pexels-mayday-1545743.jpg&fm=jpg">
-        </div>
-    </div>
-</div>
-     </section>
-
-
-     <!--Cars-->
-
-     <section class="available-cars" id="cars"><div class="container">
-              <div class="section-title">
-                <h2>Available Cars</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="loginEmail" placeholder="Email" required>
             </div>
-
-  <div class="car-grid">
-    <!-- Car 1 -->
-    <div class="car-card">
-      <img src="https://spn-sta.spinny.com/blog/20220228143146/559212.jpeg" alt="Sedan Car">
-      <h3>Sedan 2024</h3>
-      <p>Automatic | Petrol</p>
-      <p class="price">Rs. 5,000/day</p>
-      <a href="#booking" class="btn">Book Now</a>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </form>
+        <form id="signupForm" style="display: none;">
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Full Name" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+        </form>
     </div>
+</div>
 
-    <!-- Car 2 -->
-    <div class="car-card">
-      <img src="https://cdn.carprices.ae/assets/best_suvs_to_buy_under_aed_100_000_in_uae_in_2023_5_c1d1f2c369.jpeg" alt="SUV Car">
-      <h3>Luxury SUV</h3>
-      <p>Manual | Diesel</p>
-      <p class="price">Rs. 7,500/day</p>
-      <a href="#booking" class="btn">Book Now</a>
+<!-- Header -->
+<header>
+    <div class="container">
+        <nav>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="logo">
+                <i class="fas fa-car-side"></i>
+                Car<span>XRent</span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#cars">Cars</a></li>
+                <li><a href="#booking">Booking</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="right">
+                <button class="login-btn" onclick="openLoginModal()">
+                    <i class="fas fa-user"></i> Sign In
+                </button>
+                <button id="mode-toggle" class="mode-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
     </div>
+</header>
 
-
-    <div class="car-card">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3mMqcRYCJDeEBVysy-BNQ07cXezqh7bf-LQ&s" alt="Honda Civic">
-      <h3>Honda Civic</h3>
-      <p>Automatic | Petrol</p>
-      <p class="price">Rs. 12,500/day</p>
-      <a href="#booking" class="btn">Book Now</a>
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">🌟 Premium Car Rentals</div>
+                <h1>Welcome to <span>CarXrent!</span></h1>
+                <h2>Find Your Ride Today!</h2>
+                <p>Experience luxury and performance with our hand-picked collection of premium vehicles.<br>
+                Your journey begins here.</p>
+                <div class="hero-buttons">
+                    <a href="#cars" class="btn btn-primary">
+                        <i class="fas fa-car"></i> Explore Cars
+                    </a>
+                    <a href="#booking" class="btn btn-outline">
+                        <i class="fas fa-calendar-check"></i> Book Now
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat"><h3>500+</h3><p>Happy Clients</p></div>
+                    <div class="stat"><h3>50+</h3><p>Luxury Cars</p></div>
+                    <div class="stat"><h3>24/7</h3><p>Support</p></div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="img/h.jpg" alt="Luxury Car">
+            </div>
+        </div>
     </div>
-
-
-    <div class="car-card">
-      <img src="https://imgd-ct.aeplcdn.com/1280x720/n/cw/ec/44709/fortuner-exterior-left-front-three-quarter.jpeg?q=80" alt="Fortuner">
-      <h3>Fortuner</h3>
-      <p>Automatic | Fuel</p>
-      <p class="price">Rs. 15,500/day</p>
-      <a href="#booking" class="btn">Book Now</a>
-    </div>
-
-    <div class="car-card">
-      <img src="https://www.mercedes-benzsouthwest.co.uk/media/.renditions/wysiwyg/Grey_1.jpg" alt="Mercedes">
-      <h3>Mercedes</h3>
-      <p>Automatic | Petrol</p>
-      <p class="price">Rs. 20,500/day</p>
-      <a href="#booking" class="btn">Book Now</a>
-    </div>
-
-    <div class="car-card">
-      <img src="https://i0.wp.com/www.kumrattourism.com/wp-content/uploads/2022/06/toyota-corolla-1.jpg?fit=1024%2C600&ssl=1" alt="Corolla">
-      <h3>Toyota Corolla</h3>
-      <p>Manual | Petrol</p>
-      <p class="price">Rs. 8,500/day</p>
-      <a href="#booking" class="btn">Book Now</a>
-    </div>
-
-
-    <div class="car-card">
-      <img src="https://blogpakistan.pk/wp-content/uploads/2021/05/ex.jpg" alt="city">
-      <h3>Honda City</h3>
-      <p>Manual | Fuel</p>
-      <p class="price">Rs. 7,500/day</p>
-      <a href="#booking" class="btn">Book Now</a>
-    </div>
-
-    <div class="car-card">
-      <img src="https://hips.hearstapps.com/hmg-prod/images/14-2018-bmw-m5-104-1530630274.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="bmw">
-      <h3>BMW</h3>
-      <p>Automatic | Fuel</p>
-      <p class="price">Rs. 21,500/day</p>
-      <a href="#booking" class="btn">Book Now</a>
-    </div>
-
-     <div class="car-card">
-      <img src="https://images.unsplash.com/photo-1540066019607-e5f69323a8dc?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YXVkaXxlbnwwfHwwfHx8MA%3D%3D" alt="Audi">
-      <h3>Audi</h3>
-      <p>Automatic | Petrol</p>
-      <p class="price">Rs. 22,500/day</p>
-      <a href="#booking" class="btn">Book Now</a>
-    </div>
-
-    <div class="car-card">
-      <img src="https://cache1.pakwheels.com/system/car_version_specification_pictures/426/original/Toyota_Hilux_Revo_GR-S_2023_.png?1679076556" alt="Revo">
-      <h3>Toyota Revo</h3>
-      <p>Automatic | Diesel</p>
-      <p class="price">Rs. 19,500/day</p>
-      <a href="#booking" class="btn">Book Now</a>
-    </div>
-
-     <div class="car-card">
-      <img src="https://toyotacreek.com/wp-content/uploads/2022/10/Toyota-Yaris-Interior-Specs-Features-Featured.jpg" alt="Yaris">
-      <h3>Toyota Yaris</h3>
-      <p>Manual | Diesel</p>
-      <p class="price">Rs. 10,500/day</p>
-      <a href="#booking" class="btn">Book Now</a>
-    </div>
-
-     <div class="car-card">
-      <img src="https://static.pakwheels.com/2022/05/Changan-CS35-Plus.jpg" alt="Changan">
-      <h3>Changan</h3>
-      <p>Manual | Fuel</p>
-      <p class="price">Rs. 9,500/day</p>
-      <a href="#booking" class="btn">Book Now</a>
-    </div>
-
-  </div></div>
 </section>
 
-<!--booking-->
+<!-- Cars Section - Each row has its own arrows, no scrollbar -->
+<section class="available-cars" id="cars">
+    <div class="container">
+        <div class="section-title">
+            <div class="subtitle">The Finest Collection</div>
+            <h2>Our Premium Fleet</h2>
+            <p>Click arrows to scroll through our collection →</p>
+        </div>
 
+        <!-- Filter Buttons -->
+        <div class="filter-section">
+            <button class="filter-btn active" data-filter="all">All Cars</button>
+            <button class="filter-btn" data-filter="luxury">Luxury</button>
+            <button class="filter-btn" data-filter="sport">Sport</button>
+            <button class="filter-btn" data-filter="economy">Economy</button>
+            <button class="filter-btn" data-filter="suv">SUV</button>
+        </div>
+
+        <!-- ROW 1 -->
+        <div class="car-row-wrapper">
+            <div class="car-row-header">
+                <span class="row-title"><i class="fas fa-star"></i> Premium Collection</span>
+<div class="row-scroll-arrows">
+    <div class="row-arrow" onclick="scrollRow('row1Container', 'left')"><i class="fas fa-chevron-left"></i></div>
+    <div class="row-arrow" onclick="scrollRow('row1Container', 'right')"><i class="fas fa-chevron-right"></i></div>
+</div>
+            </div>
+            <div class="cars-row-container" id="row1Container">
+                <div class="car-row" id="row1">
+                    <div class="car-card" data-type="luxury"><div class="car-badge">Popular</div><img src="img/c1.png" alt="Sedan"><div class="car-info"><h3>Sedan 2024</h3><div class="car-specs"><span><i class="fas fa-cog"></i> Automatic</span><span><i class="fas fa-gas-pump"></i> Petrol</span></div><p class="price">Rs. 5,000 <span>/day</span></p><button class="book-btn" data-car="Sedan 2024"><i class="fas fa-key"></i> Rent Now</button></div></div>
+                    <div class="car-card" data-type="suv"><div class="car-badge">Luxury</div><img src="img/c2.jpg" alt="SUV"><div class="car-info"><h3>Luxury SUV</h3><div class="car-specs"><span><i class="fas fa-cog"></i> Automatic</span><span><i class="fas fa-gas-pump"></i> Diesel</span></div><p class="price">Rs. 7,500 <span>/day</span></p><button class="book-btn" data-car="Luxury SUV"><i class="fas fa-key"></i> Rent Now</button></div></div>
+                    <div class="car-card" data-type="economy"><img src="img/c3.avif" alt="Honda"><div class="car-info"><h3>Honda Civic</h3><div class="car-specs"><span><i class="fas fa-cog"></i> Automatic</span><span><i class="fas fa-gas-pump"></i> Petrol</span></div><p class="price">Rs. 12,500 <span>/day</span></p><button class="book-btn" data-car="Honda Civic"><i class="fas fa-key"></i> Rent Now</button></div></div>
+                    <div class="car-card" data-type="suv"><div class="car-badge">Premium</div><img src="img/c4.jpg" alt="Fortuner"><div class="car-info"><h3>Toyota Fortuner</h3><div class="car-specs"><span><i class="fas fa-cog"></i> Automatic</span><span><i class="fas fa-gas-pump"></i> Diesel</span></div><p class="price">Rs. 15,500 <span>/day</span></p><button class="book-btn" data-car="Toyota Fortuner"><i class="fas fa-key"></i> Rent Now</button></div></div>
+                    <div class="car-card" data-type="luxury"><div class="car-badge">Elite</div><img src="img/c5.avif" alt="Mercedes"><div class="car-info"><h3>Mercedes E-Class</h3><div class="car-specs"><span><i class="fas fa-cog"></i> Automatic</span><span><i class="fas fa-gas-pump"></i> Petrol</span></div><p class="price">Rs. 20,500 <span>/day</span></p><button class="book-btn" data-car="Mercedes E-Class"><i class="fas fa-key"></i> Rent Now</button></div></div>
+                    <div class="car-card" data-type="sport"><div class="car-badge">Sport</div><img src="img/c6.avif" alt="BMW"><div class="car-info"><h3>BMW M4</h3><div class="car-specs"><span><i class="fas fa-cog"></i> Automatic</span><span><i class="fas fa-gas-pump"></i> Petrol</span></div><p class="price">Rs. 22,500 <span>/day</span></p><button class="book-btn" data-car="BMW M4"><i class="fas fa-key"></i> Rent Now</button></div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROW 2 -->
+        <div class="car-row-wrapper">
+            <div class="car-row-header">
+                <span class="row-title"><i class="fas fa-gem"></i> Luxury & Sports</span>
+<div class="row-scroll-arrows">
+    <div class="row-arrow" onclick="scrollRow('row2Container', 'left')"><i class="fas fa-chevron-left"></i></div>
+    <div class="row-arrow" onclick="scrollRow('row2Container', 'right')"><i class="fas fa-chevron-right"></i></div>
+</div>
+            </div>
+            <div class="cars-row-container" id="row2Container">
+                <div class="car-row" id="row2">
+                    <div class="car-card" data-type="luxury"><img src="img/c7.webp" alt="Audi"><div class="car-info"><h3>Audi A6</h3><div class="car-specs"><span><i class="fas fa-cog"></i> Automatic</span><span><i class="fas fa-gas-pump"></i> Petrol</span></div><p class="price">Rs. 18,500 <span>/day</span></p><button class="book-btn" data-car="Audi A6"><i class="fas fa-key"></i> Rent Now</button></div></div>
+                    <div class="car-card" data-type="economy"><img src="img/c8.webp" alt="Corolla"><div class="car-info"><h3>Toyota Corolla</h3><div class="car-specs"><span><i class="fas fa-cog"></i> Manual</span><span><i class="fas fa-gas-pump"></i> Petrol</span></div><p class="price">Rs. 8,500 <span>/day</span></p><button class="book-btn" data-car="Toyota Corolla"><i class="fas fa-key"></i> Rent Now</button></div></div>
+                    <div class="car-card" data-type="suv"><div class="car-badge">Family</div><img src="img/c9.jpg" alt="CRV"><div class="car-info"><h3>Honda CR-V</h3><div class="car-specs"><span><i class="fas fa-cog"></i> Automatic</span><span><i class="fas fa-gas-pump"></i> Petrol</span></div><p class="price">Rs. 10,500 <span>/day</span></p><button class="book-btn" data-car="Honda CR-V"><i class="fas fa-key"></i> Rent Now</button></div></div>
+                    <div class="car-card" data-type="luxury"><div class="car-badge">Executive</div><img src="img/c10.jpg" alt="Tesla"><div class="car-info"><h3>Tesla Model S</h3><div class="car-specs"><span><i class="fas fa-cog"></i> Electric</span><span><i class="fas fa-bolt"></i> EV</span></div><p class="price">Rs. 25,500 <span>/day</span></p><button class="book-btn" data-car="Tesla Model S"><i class="fas fa-key"></i> Rent Now</button></div></div>
+                    <div class="car-card" data-type="sport"><div class="car-badge">Supercar</div><img src="img/c11.avif" alt="Porsche"><div class="car-info"><h3>Porsche 911</h3><div class="car-specs"><span><i class="fas fa-cog"></i> Automatic</span><span><i class="fas fa-gas-pump"></i> Petrol</span></div><p class="price">Rs. 35,500 <span>/day</span></p><button class="book-btn" data-car="Porsche 911"><i class="fas fa-key"></i> Rent Now</button></div></div>
+                    <div class="car-card" data-type="suv"><div class="car-badge">Luxury</div><img src="img/c12.webp" alt="Range Rover"><div class="car-info"><h3>Range Rover</h3><div class="car-specs"><span><i class="fas fa-cog"></i> Automatic</span><span><i class="fas fa-gas-pump"></i> Diesel</span></div><p class="price">Rs. 28,500 <span>/day</span></p><button class="book-btn" data-car="Range Rover"><i class="fas fa-key"></i> Rent Now</button></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Booking Section -->
 <section class="booking-section" id="booking">
     <div class="container">
-
-  <div class="section-title">
-    <h2>Car Booking</h2>
-  </div>
-
-  <div class="car-booking">
-   <form id="carBookingForm">
-  <label for="fullName">Full Name</label>
-  <input type="text" id="fullName" placeholder="Enter your full name" required />
-
-  <label for="bookingEmail">Email Address</label>
-  <input type="email" id="bookingEmail" placeholder="Enter your email" required />
-
-  <label for="carModel">Car Model</label>
-  <input type="text" id="carModel" placeholder="e.g. Toyota Yaris" required />
-
-  <label for="pickupDate">Pickup Date</label>
-  <input type="date" id="pickupDate" required />
-
-  <label for="returnDate">Return Date</label>
-  <input type="date" id="returnDate" required />
-
-  <label for="notes">Additional Notes</label>
-  <textarea id="notes" placeholder="Any instructions or notes (optional)"></textarea>
-
-  <button type="submit">Confirm Booking</button>
-  <p id="bookingConfirmation"></p>
-</form>
-
-  </div>
-</div>
-</section>
-
-
-<!-- Contact Us Section -->
-<section id="contact">
-  <div class="container">
-    <div class="section-title">
-      <h2>Contact Us</h2>
-    </div>
-
-    <div class="contact-wrapper">
-      <div class="contact-info">
-        <p><i class="fas fa-envelope"></i> Email: rentcar@example.com</p>
-        <p><i class="fas fa-phone"></i> Phone: +92-300-1234567</p>
-        <p><i class="fas fa-map-marker-alt"></i> Location: AutoXRent, Lahore, Pakistan</p>
-      </div>
-
-      <form class="contact-form">
-        <p id="contactMessage" style="margin-top: 10px;"></p>
-        <label for="name">Your Name</label>
-        <input type="text" id="name" placeholder="Enter your name" required />
-
-        <label for="email">Your Email</label>
-        <input type="email" id="email" placeholder="Enter your email" required />
-
-        <label for="message">Your Message</label>
-        <textarea id="message" placeholder="Type your message here..." required></textarea>
-
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-
-    <!--footer-->
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="https://www.google.com/"> <i class="fab fa-google" aria-hidden="true"></i></a>
-                <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+        <div class="booking-wrapper">
+            <div class="booking-info">
+                <div class="section-title" style="text-align: left;">
+                    <div class="subtitle">Secure Your Journey</div>
+                    <h2>Reserve Your Dream Car</h2>
+                    <p>Experience seamless booking with our concierge service</p>
+                </div>
+                <div class="features-list">
+                    <div class="feature"><i class="fas fa-clock"></i> 24/7 Customer Support</div>
+                    <div class="feature"><i class="fas fa-shield-alt"></i> Full Insurance Coverage</div>
+                    <div class="feature"><i class="fas fa-road"></i> Unlimited Kilometers</div>
+                    <div class="feature"><i class="fas fa-hand-sparkles"></i> Free Cancellation</div>
+                </div>
             </div>
-            <p class="copyright">© carXRent - All rights reserved.</p>
+            <div class="booking-card">
+                <h3>Booking Details</h3>
+                <form id="carBookingForm">
+                    <div class="input-group"><i class="fas fa-user"></i><input type="text" id="fullName" placeholder="Full Name" required></div>
+                    <div class="input-group"><i class="fas fa-envelope"></i><input type="email" id="bookingEmail" placeholder="Email Address" required></div>
+                    <div class="input-group"><i class="fas fa-car"></i><input type="text" id="carModel" placeholder="Car Model" required></div>
+                    <div class="input-row">
+                        <div class="input-group"><i class="fas fa-calendar-alt"></i><input type="date" id="pickupDate" required></div>
+                        <div class="input-group"><i class="fas fa-calendar-check"></i><input type="date" id="returnDate" required></div>
+                    </div>
+                    <div class="input-group"><i class="fas fa-pen"></i><textarea id="notes" placeholder="Special requests (optional)" rows="2"></textarea></div>
+                    <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-check-circle"></i> Confirm Booking</button>
+                    <p id="bookingConfirmation"></p>
+                </form>
+            </div>
         </div>
+    </div>
+</section>
 
-    </footer>
+<!-- Contact Section -->
+<section id="contact">
+    <div class="container">
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <div class="section-title" style="text-align: left;">
+                    <div class="subtitle">Get In Touch</div>
+                    <h2>Concierge Service</h2>
+                    <p>Our team is ready to assist you 24/7</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-item"><div class="info-icon"><i class="fas fa-map-marker-alt"></i></div><div><h4>Visit Us</h4><p>AutoXRent, Lahore, Pakistan</p></div></div>
+                    <div class="info-item"><div class="info-icon"><i class="fas fa-phone-alt"></i></div><div><h4>Call Us</h4><p>+92-300-1234567</p></div></div>
+                    <div class="info-item"><div class="info-icon"><i class="fas fa-envelope"></i></div><div><h4>Email Us</h4><p>rentcar@example.com</p></div></div>
+                </div>
+            </div>
+            <div class="contact-form-wrapper">
+                <form id="contactForm">
+                    <div class="input-group"><i class="fas fa-user"></i><input type="text" id="contactName" placeholder="Your Name" required></div>
+                    <div class="input-group"><i class="fas fa-envelope"></i><input type="email" id="contactEmail" placeholder="Your Email" required></div>
+                    <div class="input-group"><i class="fas fa-comment"></i><textarea id="contactMsg" placeholder="Your Message" rows="4" required></textarea></div>
+                    <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-paper-plane"></i> Send Message</button>
+                    <p id="contactMessage"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <script src="script.js"></script>
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-car-side"></i> Car<span>XRent</span>
+                <p>Luxury car rental experience</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#cars">Cars</a></li>
+                        <li><a href="#booking">Booking</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">© 2024 CarXRent. All rights reserved. | Premium Car Rental Service</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
